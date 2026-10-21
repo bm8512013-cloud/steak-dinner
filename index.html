@@ -58,7 +58,8 @@ a{color:inherit}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--sienna)}
 h1{margin:0;font-family:var(--serif);font-weight:900;line-height:1.08;letter-spacing:.02em;color:var(--sienna-deep);font-size:clamp(40px,6.2vw,78px)}
 h1 small{display:block;margin-top:14px;font-family:var(--display);font-style:italic;font-weight:500;letter-spacing:.14em;font-size:clamp(16px,2vw,22px);color:var(--ink-soft)}
-.lede{margin:26px 0 0;max-width:30em;color:var(--ink-soft);font-size:16px}
+.lede{margin:26px 0 0;max-width:30em;color:var(--ink-soft);font-size:17px;line-height:1.85}
+.lede b{color:var(--sienna-deep);font-weight:700}
 .facts{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
 .facts li{display:flex;align-items:baseline;gap:8px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.72);font-size:14px}
 .facts b{font-family:var(--display);font-size:20px;font-weight:700;color:var(--sienna-deep);font-variant-numeric:lining-nums}
@@ -204,6 +205,23 @@ td.when{color:var(--ink-soft);font-size:13px}
 .rules ul{margin:0;padding-left:1.2em}
 footer{margin-top:56px;text-align:center;font-family:var(--display);font-style:italic;font-size:18px;color:var(--ink-soft);letter-spacing:.08em}
 footer span{display:block;margin-top:8px;font-family:var(--label);font-style:normal;font-size:11.5px;letter-spacing:.26em}
+
+/* ===== 用餐三步驟 ===== */
+.how{margin-top:48px}
+.how-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.how-card{display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 20px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .18s,border-color .18s}
+.how-card:hover{transform:translateY(-2px);border-color:var(--sienna)}
+.how-card .n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--sienna);color:#fffaf0;font:700 20px var(--display);font-variant-numeric:lining-nums}
+.how-card b{font-family:var(--serif);font-size:18px;line-height:1.4;margin-top:4px}
+.how-card .d{color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+.notice.alert{background:#fbeeea;border-color:#e6c3bb;color:#7a2b23;font-size:14px}
+@media (max-width:900px){
+  .how{margin-top:36px}
+  .how-list{grid-template-columns:1fr;gap:10px}
+  .how-card{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;align-items:start;padding:16px 16px 14px}
+  .how-card .n{grid-row:1 / span 2}
+  .how-card b{margin-top:0;font-size:17px}
+}
 
 /* ===== 邀請函開場動畫 ===== */
 html.intro-lock,body.intro-lock{overflow:hidden;height:100%}
@@ -377,7 +395,7 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
     <div class="hero__copy">
       <p class="eyebrow rise d1">WNC 家庭日 · 拔河獎金聚餐</p>
       <h1 class="rise d2">拔得頭籌<br>牛排慶功宴<small>A TASTE ABOVE</small></h1>
-      <p class="lede rise d3">家庭日拔河賽拿下名次，獎金換成一頓好好吃的午餐。先看菜單、算好預算，再把你的預計點餐金額留下來，讓大家一起掌握。</p>
+      <p class="lede rise d3">感謝 <b>Rick</b> 讓我們有機會一起吃到今天這頓漂亮的飯，先給他兩個掌聲 👏👏</p>
       <ul class="facts rise d4">
         <li><b>11/14</b>（六）12:30</li>
         <li><b>11</b> 位得獎隊員</li>
@@ -389,6 +407,16 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
       <img src="steak.jpg" alt="" width="1086" height="1448" decoding="async" onerror="this.parentElement.classList.add('noimg')">
     </figure>
   </header>
+
+  <section class="how rise d4" aria-labelledby="h-how">
+    <div class="sec-head"><span class="no">★</span><h2 id="h-how">用餐簡單三步驟</h2><p>照順序做，幾分鐘就完成</p></div>
+    <ol class="how-list">
+      <li><a class="how-card" href="#menuCard"><span class="n">1</span><b>確認吃什麼</b><span class="d">先看官方菜單，決定自己想點的餐點。</span></a></li>
+      <li><a class="how-card" href="#calcBox"><span class="n">2</span><b>用計算機試算金額</b><span class="d">輸入預計點的金額，系統會自動加上水費與服務費。要分食的餐點，可以自己抓好分攤後的金額再輸入。</span></a></li>
+      <li><a class="how-card" href="#entryForm"><span class="n">3</span><b>確認餐點後，送出總額</b><span class="d">送出後，就能看到是否需要補費用。</span></a></li>
+    </ol>
+    <p class="notice alert"><b>請在確認餐點後再送出：</b>送出後無法自行修改；如需更正，請聯絡主辦人。</p>
+  </section>
 
   <section class="rise d4" aria-labelledby="h-info">
     <div class="sec-head"><span class="no">01</span><h2 id="h-info">聚餐資訊</h2><p>時間・地點・菜單</p></div>
@@ -406,7 +434,7 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
           <a class="btn" id="navLink" href="https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+Taipei" target="_blank" rel="noopener">📍 Google 地圖導航</a>
         </div>
       </article>
-      <article class="card">
+      <article class="card" id="menuCard">
         <span class="k">Menu</span>
         <div class="v">官方正式菜單</div>
         <p>價格與供應內容以餐廳公告為準，用餐前可先預覽。</p>
@@ -420,7 +448,7 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
   </section>
 
   <section class="rise d5" aria-labelledby="h-calc">
-    <div class="sec-head"><span class="no">02</span><h2 id="h-calc">餐費試算 &amp; 登記</h2><p>輸入未含服務費的點餐金額，即時算出結果</p></div>
+    <div class="sec-head"><span class="no">02</span><h2 id="h-calc">餐費試算 &amp; 登記</h2><p>輸入點餐金額，自動加上水費與服務費</p></div>
 
     <div id="previewBanner" class="preview" hidden>
       <b>預覽模式：</b>目前尚未連接共用資料庫，送出的資料只會暫存在這台裝置，其他人看不到。
@@ -441,10 +469,10 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
           </div>
           <p class="idnote" id="idNote" hidden></p>
         </fieldset>
-        <label class="field"><span>預計點餐金額<em>（未含 10% 服務費）</em></span>
+        <label class="field"><span>預計點餐金額<em>（未含水費與服務費）</em></span>
           <div class="money"><input class="input" id="amount" name="amount" type="text" inputmode="numeric" placeholder="0" required></div>
         </label>
-        <p class="hint" id="hint">不需補差額的上限：未含服務費最多點 <b class="num" id="maxFree">NT$3,000</b>。</p>
+        <p class="hint" id="hint">不需補差額的點餐上限：<b class="num" id="maxFree">NT$2,717</b>（已預留水費與服務費）。</p>
         <button class="btn submit" id="submitBtn" type="submit">送出我的預估</button>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </form>
@@ -452,14 +480,15 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
       <div class="card result" id="resultCard" aria-live="polite">
         <ul class="rows">
           <li><span>點餐金額</span><span class="num" id="rBase">NT$0</span></li>
-          <li><span>服務費（<span id="rPct">10</span>%）</span><span class="num" id="rFee">NT$0</span></li>
+          <li><span>水費（每人）</span><span class="num" id="rWater">NT$80</span></li>
+          <li><span>服務費（<span id="rPct">10</span>%，含水費）</span><span class="num" id="rFee">NT$0</span></li>
           <li class="total"><span>含服務費合計</span><span class="num" id="rTotal">NT$0</span></li>
         </ul>
         <div class="meter-wrap" id="meterWrap">
           <div class="meter" id="meter" aria-hidden="true"><i id="meterFill"></i></div>
           <div class="meter-cap"><span>個人額度使用</span><span class="num" id="meterCap">0 / 3,077</span></div>
         </div>
-        <p class="nosub" id="noSub" hidden>此身份沒有補助額度：應付金額 ＝ 含服務費合計。</p>
+        <p class="nosub" id="noSub" hidden>此身份沒有補助額度：應付金額 ＝ 含水費與服務費的合計。</p>
         <div class="verdict" id="verdict">
           <div class="t" id="vTitle">結果</div>
           <div class="big"><span class="num" id="vNum">—</span><small id="vNote">輸入金額後即時顯示</small></div>
@@ -477,9 +506,9 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
         <span class="m"><i></i>獲補助隊員</span><span class="n"><i></i>未獲補助同仁</span><span class="f"><i></i>同仁眷屬</span><span class="e"><i></i>尚未登記的隊員名額</span>
       </div>
       <div class="stats">
-        <div class="stat"><span class="l">預估點餐合計</span><span class="n num" id="sBase">NT$0</span><small>未含服務費</small></div>
-        <div class="stat"><span class="l">服務費合計</span><span class="n num" id="sFee">NT$0</span></div>
-        <div class="stat"><span class="l">含服務費總額</span><span class="n num" id="sTotal">NT$0</span><small>＝ 補助使用 ＋ 需自付</small></div>
+        <div class="stat"><span class="l">預估點餐合計</span><span class="n num" id="sBase">NT$0</span><small>未含水費與服務費</small></div>
+        <div class="stat"><span class="l">水費＋服務費合計</span><span class="n num" id="sFee">NT$0</span><small id="sFeeNote">水費 NT$0 ＋ 服務費 NT$0</small></div>
+        <div class="stat"><span class="l">含水費與服務費總額</span><span class="n num" id="sTotal">NT$0</span><small>＝ 補助使用 ＋ 需自付</small></div>
         <div class="stat"><span class="l">補助使用合計</span><span class="n num" id="sSub">NT$0</span><small>僅「獲補助隊員」</small></div>
         <div class="stat hl"><span class="l">需自付合計</span><span class="n num" id="sPay">NT$0</span><small>含未獲補助者全額</small></div>
         <div class="stat ok"><span class="l">個人額度剩餘合計</span><span class="n num" id="sLeft">NT$0</span><small>不可互相挪用</small></div>
@@ -502,8 +531,9 @@ button,.btn,.fchip,.seg label,.skip{touch-action:manipulation;-webkit-tap-highli
       <h3>計算與使用規則</h3>
       <ul>
         <li><b>獲補助隊員</b>：獎金總額 <b data-prize>NT$33,845</b> ÷ <span data-members>11</span> 人 ＝ NT$<span data-avg>3,076.8</span>，進位為每人 <b data-allow>NT$3,077</b> 的獨立額度，不可互相挪用。（進位後 <span data-members>11</span> 人合計 <span data-roundtotal>NT$33,847</span>，與獎金相差 <span data-diff>NT$2</span>，實際以主辦人最終結算為準。）</li>
-        <li><b>未獲補助同仁、同仁眷屬</b>：沒有補助，應付金額 ＝ 含服務費合計。</li>
-        <li>含服務費合計 ＝ 點餐金額 ＋ 10% 服務費（四捨五入至整數）。獲補助隊員超過額度的部分為「需自付」，未超過則為「個人額度剩餘」。</li>
+        <li><b>未獲補助同仁、同仁眷屬</b>：沒有補助，應付金額 ＝ 含水費與服務費的合計。</li>
+        <li><b>水費</b>：每人 <span data-water>NT$80</span>，同樣加收 10% 服務費（每人實際 <span data-waterfull>NT$88</span>），會自動算進上方金額，不需另外輸入。</li>
+        <li>含服務費合計 ＝（點餐金額 ＋ 水費）＋ 10% 服務費（四捨五入至整數）。獲補助隊員超過額度的部分為「需自付」，未超過則為「個人額度剩餘」。</li>
         <li>總人數不固定，名單與加總會隨登記人數自動更新。眷屬請以「姓名＋眷屬」登記（例如：王小明眷屬），避免與同仁姓名重複。</li>
         <li>試算為預估，實際金額以餐廳帳單為準。</li>
         <li>每個姓名只能送出一次；如需修改或刪除，請聯絡主辦人處理。</li>
@@ -528,6 +558,7 @@ const CONFIG = {
   MEMBERS: 11,             // 獲補助的得獎隊員人數
   // 個人額度 ＝ 獎金總額 ÷ 隊員人數，無條件進位（程式自動計算，見下方 ALLOWANCE）
   SERVICE_PERCENT: 10,     // 服務費百分比
+  WATER_FEE: 80,           // 每人水費（NT$），與點餐金額一起加收服務費
   EVENT_TIME_TEXT: "12:30 入席",   // 邀請函上顯示的時間文字（如有結束時間可改成「12:30–14:30」）
   MAX_AMOUNT: 30000,       // 單人點餐金額上限（需與資料庫設定一致）
   EVENT_ISO: "2026-11-14T12:30:00+08:00",
@@ -553,21 +584,24 @@ const catOf = c => (CATS[c] ? c : "member");   // 舊資料沒有身份時視為
 
 const calc = (base, cat) => {
   const allowance = CATS[catOf(cat)].subsidy ? CONFIG.ALLOWANCE : 0;
-  const fee = Math.round(base * CONFIG.SERVICE_PERCENT / 100);
-  const total = base + fee;
+  const water = CONFIG.WATER_FEE;                                       // 每人固定水費
+  const fee = Math.round((base + water) * CONFIG.SERVICE_PERCENT / 100); // 服務費：點餐＋水費
+  const total = base + water + fee;
   return {
-    base, fee, total, allowance,
+    base, water, fee, total, allowance,
     used: Math.min(total, allowance),            // 實際使用的補助
     pay: Math.max(total - allowance, 0),         // 應付／需自付
     left: Math.max(allowance - total, 0)         // 個人額度剩餘（僅有補助者）
   };
 };
-// 不需補差額的最高點餐金額（逐步確認，避免四捨五入造成誤差）
+// 不需補差額的最高點餐金額（已含水費與服務費；逐步確認，避免四捨五入造成誤差）
 let maxFree = Math.floor(CONFIG.ALLOWANCE * 100 / (100 + CONFIG.SERVICE_PERCENT)) + 2;
 while (maxFree > 0 && calc(maxFree, "member").total > CONFIG.ALLOWANCE) maxFree--;
 
 // 把設定值帶入頁面文字
 document.querySelectorAll("[data-allow]").forEach(e => e.textContent = fmt(CONFIG.ALLOWANCE));
+document.querySelectorAll("[data-water]").forEach(e => e.textContent = fmt(CONFIG.WATER_FEE));
+document.querySelectorAll("[data-waterfull]").forEach(e => e.textContent = fmt(CONFIG.WATER_FEE + Math.round(CONFIG.WATER_FEE * CONFIG.SERVICE_PERCENT / 100)));
 document.querySelectorAll("[data-prize]").forEach(e => e.textContent = fmt(CONFIG.PRIZE_TOTAL));
 document.querySelectorAll("[data-members]").forEach(e => e.textContent = CONFIG.MEMBERS);
 document.querySelectorAll("[data-avg]").forEach(e => e.textContent = AVG_ALLOWANCE.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
@@ -691,7 +725,7 @@ function updateCalc() {
   note.hidden = cat !== "family";
   note.textContent = cat === "family" ? "眷屬請以「姓名＋眷屬」登記，例如：王小明眷屬。" : "";
 
-  setNum("rBase", fmt(c.base)); setNum("rFee", fmt(c.fee)); setNum("rTotal", fmt(c.total));
+  setNum("rBase", fmt(c.base)); setNum("rWater", fmt(c.water)); setNum("rFee", fmt(c.fee)); setNum("rTotal", fmt(c.total));
   if (subsidy) {
     const pct = Math.min(c.total / CONFIG.ALLOWANCE * 100, 100);
     $("meterFill").style.width = (base == null ? 0 : pct) + "%";
@@ -703,16 +737,16 @@ function updateCalc() {
   v.className = "verdict";
   if (base == null) {
     $("vTitle").textContent = "結果"; setNum("vNum", "—"); $("vNote").textContent = "輸入金額後即時顯示";
-    $("vSub").textContent = subsidy ? "每人額度 " + fmt(CONFIG.ALLOWANCE) + "，彼此不能挪用。" : "此身份無補助，應付金額 ＝ 含服務費合計。";
+    $("vSub").textContent = subsidy ? "每人額度 " + fmt(CONFIG.ALLOWANCE) + "，彼此不能挪用。" : "此身份無補助，應付金額 ＝ 含水費與服務費的合計。";
   } else if (!subsidy) {
     v.classList.add("pay"); $("vTitle").textContent = "應付金額"; setNum("vNum", fmt(c.pay)); $("vNote").textContent = "無補助・全額自付";
-    $("vSub").textContent = "點餐 " + fmt(c.base) + " ＋ 服務費 " + fmt(c.fee) + "。";
+    $("vSub").textContent = "點餐 " + fmt(c.base) + " ＋ 水費 " + fmt(c.water) + " ＋ 服務費 " + fmt(c.fee) + "。";
   } else if (c.pay > 0) {
     v.classList.add("pay"); $("vTitle").textContent = "需自付差額"; setNum("vNum", fmt(c.pay)); $("vNote").textContent = "超出額度";
-    $("vSub").textContent = "含服務費 " + fmt(c.total) + "，扣除額度 " + fmt(CONFIG.ALLOWANCE) + "。";
+    $("vSub").textContent = "含水費與服務費 " + fmt(c.total) + "，扣除額度 " + fmt(CONFIG.ALLOWANCE) + "。";
   } else {
     v.classList.add("left"); $("vTitle").textContent = "個人額度剩餘"; setNum("vNum", fmt(c.left)); $("vNote").textContent = c.left === 0 ? "剛好用完" : "不需補差額";
-    $("vSub").textContent = "含服務費 " + fmt(c.total) + "，未超過個人額度。";
+    $("vSub").textContent = "含水費與服務費 " + fmt(c.total) + "，未超過個人額度。";
   }
   syncLive();
 }
@@ -747,11 +781,11 @@ const numSpan = x => el("span", "num", fmt(x));
 
 function renderBoard(rows) {
   allRows = rows.map(r => ({ ...r, category: catOf(r.category) }));
-  const sum = { base: 0, fee: 0, total: 0, used: 0, pay: 0, left: 0 };
+  const sum = { base: 0, water: 0, fee: 0, total: 0, used: 0, pay: 0, left: 0 };
   const grp = {}; CAT_KEYS.forEach(k => grp[k] = { n: 0, total: 0, pay: 0 });
   allRows.forEach(r => {
     const c = calc(r.amount, r.category);
-    sum.base += c.base; sum.fee += c.fee; sum.total += c.total; sum.used += c.used; sum.pay += c.pay; sum.left += c.left;
+    sum.base += c.base; sum.water += c.water; sum.fee += c.fee; sum.total += c.total; sum.used += c.used; sum.pay += c.pay; sum.left += c.left;
     const g = grp[r.category]; g.n++; g.total += c.total; g.pay += c.pay;
   });
 
@@ -766,7 +800,8 @@ function renderBoard(rows) {
   slots.appendChild(cnt);
 
   // 加總
-  setNum("sBase", fmt(sum.base)); setNum("sFee", fmt(sum.fee)); setNum("sTotal", fmt(sum.total));
+  setNum("sBase", fmt(sum.base)); setNum("sFee", fmt(sum.water + sum.fee)); setNum("sTotal", fmt(sum.total));
+  $("sFeeNote").textContent = "水費 " + fmt(sum.water) + " ＋ 服務費 " + fmt(sum.fee);
   setNum("sSub", fmt(sum.used)); setNum("sPay", fmt(sum.pay)); setNum("sLeft", fmt(sum.left));
 
   // 分組小計
@@ -789,7 +824,7 @@ function renderTable() {
   const wrap = $("tableWrap"); wrap.textContent = "";
   if (!rows.length) { wrap.appendChild(el("div", "empty", allRows.length ? "這個身份目前沒有人登記。" : "還沒有人登記，成為第一位吧！")); return; }
   const t = document.createElement("table");
-  t.innerHTML = "<thead><tr><th>姓名</th><th>身份</th><th class='r'>點餐金額</th><th class='r'>服務費</th><th class='r'>含服務費</th><th>結果</th><th>登記時間</th></tr></thead><tbody></tbody>";
+  t.innerHTML = "<thead><tr><th>姓名</th><th>身份</th><th class='r'>點餐金額</th><th class='r'>水費</th><th class='r'>服務費</th><th class='r'>含服務費</th><th>結果</th><th>登記時間</th></tr></thead><tbody></tbody>";
   const tb = t.querySelector("tbody");
   rows.forEach(r => {
     const c = calc(r.amount, r.category);
@@ -797,7 +832,7 @@ function renderTable() {
     const cell = (cls, label, content) => { const td = document.createElement("td"); if (cls) td.className = cls; td.dataset.l = label; if (content instanceof Node) td.appendChild(content); else td.textContent = content; tr.appendChild(td); };
     cell("name", "姓名", r.name);
     cell("", "身份", el("span", "tag id " + r.category, CATS[r.category].label));
-    cell("r", "點餐金額", numSpan(c.base)); cell("r", "服務費", numSpan(c.fee)); cell("r", "含服務費", numSpan(c.total));
+    cell("r", "點餐金額", numSpan(c.base)); cell("r", "水費", numSpan(c.water)); cell("r", "服務費", numSpan(c.fee)); cell("r", "含服務費", numSpan(c.total));
     const sub = CATS[r.category].subsidy;
     const tag = el("span", "tag " + (c.pay > 0 ? "pay" : "left"), !sub ? "應付 " + fmt(c.pay) : (c.pay > 0 ? "需自付 " + fmt(c.pay) : "額度剩餘 " + fmt(c.left)));
     cell("", "結果", tag);
@@ -834,7 +869,7 @@ $("entryForm").addEventListener("submit", async e => {
   try {
     await store.add(name, amount, cat);
     const c = calc(amount, cat);
-    say("已登記！" + name + "（" + CATS[cat].label + "）：含服務費 " + fmt(c.total) + "，" +
+    say("已登記！" + name + "（" + CATS[cat].label + "）：含水費與服務費 " + fmt(c.total) + "，" +
         (!CATS[cat].subsidy ? "應付 " + fmt(c.pay) : (c.pay > 0 ? "需自付 " + fmt(c.pay) : "個人額度剩餘 " + fmt(c.left))) + "。", "ok");
     $("entryForm").reset(); updateCalc();
     await refresh(); $("tableWrap").scrollIntoView({ behavior: "smooth", block: "center" });
